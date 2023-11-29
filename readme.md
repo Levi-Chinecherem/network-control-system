@@ -17,19 +17,11 @@ The Network Control System is a web-based application designed to manage and mon
 
 ### Network Device List
 
-![Network Device List](screenshots/network_device_list.png)
-
-### Add Network Device
-
-![Add Network Device](screenshots/add_network_device.png)
-
-### Update Network Device
-
-![Update Network Device](screenshots/update_network_device.png)
+![Network Device List](https://github.com/Levi-Chinecherem/network-control-system/blob/main/samples/p4.png)
 
 ### System Dashboard
 
-![System Dashboard](screenshots/system_dashboard.png)
+![System Dashboard](https://github.com/Levi-Chinecherem/network-control-system/blob/main/samples/p5.png)
 
 ## Installation
 
