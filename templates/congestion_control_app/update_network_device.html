@@ -1,0 +1,31 @@
+<!-- congestion_control_app/templates/congestion_control_app/update_network_device.html -->
+{% extends 'base.html' %}
+
+{% block title %}Update Network Device{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="mb-4">Update Network Device</h1>
+        </div>
+        <form method="post" action="{% url 'update_network_device' device.id %}" class="col-md-6 mx-auto">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" value="{{ device.name }}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <input type="text" name="status" value="{{ device.status }}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="quantity" value="{{ device.quantity }}" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Update Device</button>
+        </form>
+        <div class="text-center mt-3">
+            <a href="{% url 'network_device_list' %}" class="btn btn-secondary">Back to Network Devices</a>
+        </div>
+    </div>
+{% endblock %}

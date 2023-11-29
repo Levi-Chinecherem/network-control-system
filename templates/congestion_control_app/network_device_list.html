@@ -1,0 +1,33 @@
+<!-- congestion_control_app/templates/congestion_control_app/network_device_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Network Device List{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="mb-4">Network Devices</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <ul class="list-group">
+                    {% for device in devices %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>{{ device.name }}</strong> - Status: {{ device.status }} - Rate: {{ device.network_rate }}
+                            </div>
+                            <div>
+                                <a href="{% url 'update_network_device' device.id %}" class="btn btn-info btn-sm">Update</a>
+                                <a href="{% url 'delete_network_device' device.id %}" class="btn btn-danger btn-sm ml-2">Delete</a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <a href="{% url 'add_network_device' %}" class="btn btn-success">Add New Network Device</a>
+            <a href="{% url 'system_dashboard' %}" class="btn btn-primary ml-2">System Dashboard</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,68 @@
+<!-- congestion_control_app/templates/congestion_control_app/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="mb-4">Welcome to Congestion Control System</h1>
+        </div>
+
+        <div class="card-deck">
+            <!-- Feature 1: Overview -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Overview</h5>
+                    <p class="card-text">
+                        The Congestion Control System is a robust solution designed to manage and optimize your network infrastructure.
+                        It ensures efficient utilization of resources, minimizes congestion, and provides real-time insights into your network's performance.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 2: Network Devices -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Network Devices</h5>
+                    <p class="card-text">
+                        Easily add, update, and delete network devices. Each device comes with detailed information, including its name, status, and network rate.
+                        Keep your inventory organized and up-to-date to make informed decisions about your network infrastructure.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 3: System Dashboard -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">System Dashboard</h5>
+                    <p class="card-text">
+                        Monitor the health and performance of your network in real-time. The system dashboard provides comprehensive visualizations of CPU usage,
+                        memory usage, and other vital metrics. Stay informed and proactive in managing your network resources.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Section 1: Benefits -->
+        <div class="mt-5">
+            <h2>Key Benefits</h2>
+            <ul>
+                <li>Optimize network performance and prevent congestion.</li>
+                <li>Efficiently manage and monitor all network devices from a centralized platform.</li>
+                <li>Real-time insights enable quick response to potential issues.</li>
+                <li>Improve resource utilization and reduce downtime.</li>
+                <li>User-friendly interface for easy navigation and configuration.</li>
+            </ul>
+        </div>
+
+        <!-- Additional Section 2: Getting Started -->
+        <div class="text-center mt-5">
+            <h2>Getting Started</h2>
+            <p>
+                Ready to take control of your network? Click the button below to get started with Congestion Control System.
+            </p>
+            <a href="{% url 'network_device_list' %}" class="btn btn-success">Get Started</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+<!-- congestion_control_app/templates/congestion_control_app/add_network_device.html -->
+{% extends 'base.html' %}
+
+{% block title %}Add Network Device{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="mb-4">Add Network Device</h1>
+        </div>
+        <form method="post" action="{% url 'add_network_device' %}" class="col-md-6 mx-auto">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <select name="name" class="form-control" required>
+                    {% for device_choice in device_choices %}
+                        <option value="{{ device_choice.0 }}">{{ device_choice.1 }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select name="status" class="form-control" required>
+                    {% for status_choice in status_choices %}
+                        <option value="{{ status_choice.0 }}">{{ status_choice.1 }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" name="quantity" value="1" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Add Device</button>
+        </form>
+        <div class="text-center mt-3">
+            <a href="{% url 'network_device_list' %}" class="btn btn-secondary">Back to Network Devices</a>
+        </div>
+    </div>
+{% endblock %}
